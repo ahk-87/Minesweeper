@@ -89,6 +89,7 @@ class Minesweeper(var mines: Int = 0) {
         if (userField[x][y] == '/') {
             for (i in (x - 1).coerceAtLeast(0)..(x + 1).coerceAtMost(8)) {
                 for (j in (y - 1).coerceAtLeast(0)..(y + 1).coerceAtMost(8)) {
+                    if (i == x && j == y) continue
                     openCells(i, j)
                 }
             }
